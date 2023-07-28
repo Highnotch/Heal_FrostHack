@@ -1,0 +1,225 @@
+{% extends "base_index.html" %}
+{% block content %}
+<nav class="navbar navbar-expand-lg nav-back fixed-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand" href="#"> <img id="topimg" src="../static/WhatsApp Image 2023-03-03 at 12.27.28 PM.jpeg"
+        alt=""></a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+      data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+      aria-label="Toggle navigation"><i class="fas fa-bars fa-2x"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Diagnosis
+          </a>
+          <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#service">All Disease</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="/home_brain_tumor">Brain Tumor Diagnosis</a>
+            <a class="dropdown-item" href="/home_heart">Heart Disease Diagnosis</a>
+            <a class="dropdown-item" href="/home_liver">Liver Disease Diagnosis</a>
+            <a class="dropdown-item" href="/home_kidney">Chronic Kidney Disease Diagnosis</a>
+            <a class="dropdown-item" href="/home_diabetes">Diabetes Diagnosis</a>
+            <a class="dropdown-item" href="/home_stroke">Stroke Risk Diagnosis</a>
+            <a class="dropdown-item" href="home_pneumonia">Pneumonia Diagnosis</a>
+          </div>
+        </li>
+        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+
+
+      </ul>
+    </div>
+  </div>
+</nav>
+<a name="home"></a>
+<section id="hero" class="d-flex align-items-center">
+
+  <div class="container text-center position-relative">
+    <h1>Welcome to <span style="color: rgba(255, 48, 75, 0.8); "> HEAL</span> </h1>
+    <h2>Health Evaluation & Analysis Lab</h2>
+    <br><br><br>
+    <a href="#service" class="main-btn">Get Started</a>
+  </div>
+</section>
+
+<a name="service"></a>
+<section id="services" class="services mt-5 mb-3 py-3">
+
+  <div class="container" style="margin-top: 50px;">
+    <div class="section-title">
+      <h1 class="text-center">Disease Diagnosis</h1>
+      <hr>
+    </div>
+    <br><br>
+    <div class="row">
+      <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+        <div class="icon-box">
+          <div class="icon"><i class="fas fa-brain"></i></div>
+          <h4 class="title"><a href="/home_brain_tumor">Brain Tumor Diagnosis</a></h4>
+          <p class="description">A brain tumor is a collection, or mass, of abnormal cells in
+            your brain. Your skull, which encloses your brain, is very rigid.
+            Any growth inside such a restricted space can cause problems.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+        <div class="icon-box">
+          <div class="icon"><i class="fas fa-disease"></i></div>
+          <h4 class="title"><a href="home_pneumonia">Pneumonia Diagnosis</a></h4>
+          <p class="description">Pneumonia is an infection that inflames the air sacs in one or both lungs. The air sacs
+            may fill with fluid or pus (purulent material), causing cough with phlegm or pus, fever, chills, and
+            difficulty breathing. A variety of organisms, including bacteria, viruses and fungi, can cause pneumonia.
+          </p>
+        </div>
+      </div>
+
+
+
+      <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+        <div class="icon-box">
+          <div class="icon"><i class="fas fa-bacteria"></i></div>
+          <h4 class="title"><a href="/home_kidney">Chronic Kidney Disease Diagnosis</a></h4>
+          <p class="description">Chronic kidney disease includes conditions that damage your kidneys and
+            decrease their ability to keep you healthy. If kidney disease gets worse,
+            wastes can build to high levels in your blood and make you feel sick.</p>
+        </div>
+      </div>
+
+
+      <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+        <div class="icon-box">
+          <div class="icon"><i class="fas fa-brain"></i></div>
+          <h4 class="title"><a href="/home_stroke">Stroke Risk Diagnosis</a></h4>
+          <p class="description">A stroke occurs when a blood vessel in the brain ruptures and
+            bleeds, or when there’s a blockage in the blood supply to the brain. The rupture or
+            blockage prevents blood and oxygen from reaching the brain’s tissues.</p>
+        </div>
+      </div>
+
+
+    </div>
+
+    <div class="row" style="margin-top: 50px;">
+      <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+        <div class="icon-box">
+          <div class="icon"><i class="fas fa-dice-d6"></i></div>
+          <h4 class="title"><a href="/home_diabetes">Diabetes Diagnosis</a></h4>
+          <p class="description">Diabetes is a disease that occurs when your blood glucose, also
+            called blood sugar, is too high. Blood glucose is your
+            main source of energy and comes from the food you eat.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+        <div class="icon-box">
+          <div class="icon"> <i class="fas fa-heartbeat"></i></div>
+          <h4 class="title"><a href="/home_heart">Heart Disease Diagnosis</a></h4>
+          <p class="description">Heart disease describes a range of conditions that affect your heart.
+            It is a collection of diseases and conditions that cause cardiovascular problems..</p>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+        <div class="icon-box">
+          <div class="icon"><i class="fas fa-disease"></i></div>
+          <h4 class="title"><a href="/home_liver">Liver Disease Diagnosis</a></h4>
+          <p class="description">Liver disease is any disturbance of liver function that causes
+            illness. The liver is responsible for many critical functions within
+            the body and if it become diseased or injured,
+            the loss of those functions can cause significant damage to the body.</p>
+        </div>
+      </div>
+ </div>
+ </div>
+  </div>
+</section>
+
+<br>
+<a name="about"></a>
+<br>
+</div>
+</div>
+</section>
+<section class="about">
+  <div class="container">
+
+    <div class="section-title text-center mt-5">
+      <h1>About Us</h1>
+      <div>
+        Welcome to our website, where we use the latest in deep learning technology to provide accurate and reliable
+        diagnoses for a range of health conditions.
+        <br>
+        <br>
+        Our team of experts has developed a state-of-the-art algorithm that uses machine learning to analyze large
+        datasets of medical images and patient data, enabling us to quickly and accurately diagnose a variety of
+        conditions.
+        <br>
+        <br>
+        Our user-friendly interface guides you through the diagnostic process,
+        making it simple and intuitive to upload the medical images and symptoms, while prioritizing accuracy and
+        sensitivity to predict the
+        most likely result.
+        <br>
+        <br>
+        Thank you for choosing us as your partner in health diagnostics. We look forward to helping you on your journey
+        towards
+        optimal health diagnosis and wellbeing.
+      </div>
+    </div>
+    <br><br>
+
+</section>
+<br>
+
+<a name="contact"></a>
+<section class="contact">
+  <div class="container">
+
+    <div class="section-title text-center mt-5">
+      <h1>Contact us</h1>
+    </div>
+    <br><br>
+    <div class="row">
+
+      <div class="col-lg-12">
+
+        <div class="row">
+          <div class="col-md-4 cnb">
+            <div class="contact-box mt-4">
+              <i class="fas fa-map-signs"></i>
+              <h3>Address</h3>
+              <p>IIT Mandi <br> Himachal Pradesh </p>
+            </div>
+          </div>
+          <div class="col-md-4 cnb">
+            <div class="contact-box mt-4">
+              <i class="fas fa-envelope"></i>
+              <h3>Email Us</h3>
+              <p>heal@gmail.com<br>healhelp@gmail.com</p>
+            </div>
+          </div>
+          <div class="col-md-4 cnb">
+            <div class="contact-box mt-4">
+              <i class="fas fa-phone"></i>
+              <h3>Call Us</h3>
+              <p>+91-9876543210<br>+91-8976543210</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+  </div>
+</section>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+  integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+  integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+  integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+{% endblock %}

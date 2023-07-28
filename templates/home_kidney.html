@@ -1,0 +1,96 @@
+{% extends "base_home.html" %}
+
+{% block title %}
+Chronic Kidney Disease Diagnosis
+{% endblock %}
+
+ {% block heading %}
+      <h1 style="color: white;">Welcome To <span style="color: rgba(255, 48, 75, 0.8);"> Chronic Kidney Disease Diagnosis </span>  </h1>
+     
+  {% endblock %}
+  {% block info %}
+  
+
+    {% endblock %}
+    {% block form %}
+        
+    
+        <div class="text-center">
+        <p class="h1">Chronic Kidney Disease Diagnosis</p>
+        </div>
+        <br>
+    <div class="container">
+        <div class="col-md-10 col-centered">
+        <div class="col-md-12">
+                <form action="{{ url_for('kidney_pred') }}" method="post">
+                    <br>
+                    <br>
+                    <div class="form-group">
+                        
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4">
+                                <label for="sg">Specific Gravity</label>
+                            </div>
+                            <div class="col-lg-8 col-md-8">
+                                <input required type="text" class="form-control" id="sg" name="sg" placeholder="Specific Gravity">
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4">
+                                <label for="al">Albumin</label>
+                            </div>
+                            <div class="col-lg-8 col-md-8">
+                                <input required type="text" class="form-control" id="al" name="al" placeholder="Albumin">
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4">
+                                <label for="sc">Serum Creatinine</label>
+                            </div>
+                            <div class="col-lg-8 col-md-8">
+                                <input required  type="text" class="form-control" id="sc" name="sc" placeholder="Serum Creatinine">
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4">
+                                <label for="hemo">Hemoglobin</label>
+                            </div>
+                            <div class="col-lg-8 col-md-8">
+                                <input required  type="text" class="form-control" id="hemo" name="hemo" placeholder="Hemoglobin">
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4">
+                                <label for="pcv">Packed Cell Volume</label>
+                            </div>
+                            <div class="col-lg-8 col-md-8">
+                                <input  required type="text" class="form-control" id="pcv" name="pcv" placeholder="Packed Cell Volume">
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4">
+                                <label for="htn">Hypertension</label>
+                            </div>
+                            <div class="col-lg-8 col-md-8">
+                                <input required  type="text" class="form-control" id="htn" name="htn" placeholder="1 for Yes, 0 for No">
+                                    
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <br>
+                        
+                        <center>
+                            <button type="submit" class="btn btn-light btn-lg btn-block" id="sbbtn" value="submit">Submit</button>
+                        </center>
+                        <br>
+                </form>
+            </div>
+        </div>
+    </div>
+        {% endblock %}

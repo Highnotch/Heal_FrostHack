@@ -1,0 +1,918 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title> {% block title %}{% endblock %}</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/332a215f17.js" crossorigin="anonymous"></script>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="shortcut icon" href="{{url_for('static', filename='favicon.png')}}" type="image/x-icon" />
+  <style>
+    /* html {
+    height: 100%;
+  } */
+    body {
+      background-color: ghostwhite;
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+      /* background: linear-gradient(#141e30, #243b55); */
+      /* background-color: black; */
+    }
+  
+    .col-centered {
+      float: none;
+      margin: 0 auto;
+    }
+  
+    .col-md-12 {
+      background-color: #fff;
+      background-position: center;
+      background-size: cover;
+      border-radius: 40px;
+    }
+  
+
+  
+    .col-lg-4 {
+      color: rgb(0, 0, 0);
+      font-weight: bold;
+      /* border-radius: 40px; */
+    }
+  
+    input[type=file]::file-selector-button {
+      border: 6px solid #000000;
+      padding: .2em .4em;
+      border-radius: .2em;
+      background-color: #000000;
+      /* transition: 1s; */
+      color: white;
+  
+    }
+  
+    /* .choose_file_btn{
+    color: red;
+    background-color: rgb(127, 212, 252);
+    width: 20vw;
+    height: 40vh;
+    /* color: transparent; */
+  
+  
+  
+    body {
+      font-family: 'Roboto', sans-serif;
+    }
+  
+    /*--------------------------------------------------------------
+  # Navigation Menu
+  --------------------------------------------------------------*/
+    * {
+      scroll-behavior: smooth;
+    }
+  
+    .nav-back {
+      background: rgba(255, 48, 75, 0.8);
+      color: #fff;
+    }
+  
+    .navbar-brand {
+      color: rgb(255, 255, 255);
+    }
+  
+    .navbar-brand:hover {
+      color: #fff;
+    }
+  
+    .nav-link {
+      color: rgb(255, 255, 255);
+    }
+  
+    .nav-link:hover {
+      color: #fff;
+    }
+  
+    .navbar-toggler {
+      outline: none !important;
+    }
+  
+  
+  
+    /*--------------------------------------------------------------
+  # Hero Section
+  --------------------------------------------------------------*/
+    #hero {
+      width: 100%;
+      height: 100vh;
+      /* background: url("/templates/images/doc.jpg") center center; */
+      background-color: #000;
+      background-size: cover;
+      position: relative;
+      margin-top: 78px;
+    }
+
+  
+    #hero .container {
+      padding-top: 80px;
+    }
+
+  
+    #hero h1 {
+      margin: 0 0 10px 0;
+      font-size: 48px;
+      font-weight: 700;
+      line-height: 56px;
+      color: rgb(0, 0, 0);
+    }
+  
+    #hero h2 {
+      color: rgb(0, 0, 0);
+      margin-bottom: 40px;
+      font-size: 15px;
+      font-weight: 500;
+      font-family: "Open Sans", sans-serif;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+  
+    .main-btn {
+      font-family: "Poppins", sans-serif;
+      text-transform: uppercase;
+      font-weight: bold;
+      font-size: 14px;
+      letter-spacing: 1px;
+      display: inline-block;
+      padding: 8px 28px;
+      border-radius: 50px;
+      transition: 0.5s;
+      margin: 10px;
+      border: 2px solid rgb(0, 0, 0);
+      color: rgb(0, 0, 0);
+    }
+  
+    .main-btn:hover {
+      background: rgba(255, 48, 75, 0.8);
+      border: 2px solid rgba(255, 48, 75, 0.8);
+      text-decoration: none;
+      color: #fff;
+    }
+  
+    /*--------------------------------------------------------------
+  # Services
+  --------------------------------------------------------------*/
+    .service {
+      text-align: center;
+      padding: 70px 20px 80px 20px;
+      transition: all ease-in-out 0.3s;
+      /* background: rgb(127, 212, 252); */
+      background-color: rgb(0, 221, 221);
+      font-weight: bold;
+      box-shadow: 0px 5px 90px 0px rgba(3, 117, 111, 0.63);
+    }
+  
+    .service .icon {
+      margin: 0 auto;
+      width: 64px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: ease-in-out 0.3s;
+      position: relative;
+      background: #f5f5f5;
+      border-radius: 50px;
+    }
+  
+    .service .icon i {
+      font-size: 32px;
+      transition: 0.5s;
+      line-height: 1;
+      position: relative;
+    }
+  
+    .service h4 {
+      font-weight: 600;
+      margin: 10px 0 15px 0;
+      font-size: 22px;
+      color: rgb(255, 255, 255);
+    }
+  
+    .service h4 a {
+      color: rgb(255, 255, 255);
+      transition: ease-in-out 0.3s;
+    }
+  
+    .service p {
+      line-height: 24px;
+      font-size: 16px;
+      margin-bottom: 0;
+    }
+  
+    .services i {
+      color: rgb(24, 0, 161);
+    }
+  
+    /*----about -section*/
+    .about-section {
+      margin-top: 5rem;
+      margin-bottom: 5rem;
+    }
+  
+    .about-heading {
+      text-transform: uppercase;
+    }
+  
+    .about-heading .about-heading-upper {
+      display: block;
+      font-size: 1rem;
+      font-weight: 800;
+    }
+  
+    .about-heading .about-heading-lower {
+      display: block;
+      font-size: 38px;
+      font-weight: 100;
+    }
+  
+    .bg-faded {
+      background-color: rgba(59, 37, 255, 0.8);
+    }
+  
+    .about-button .btn-color {
+      background: rgba(59, 37, 255, 0.8);
+      font-weight: bold;
+      color: #fff;
+    }
+  
+    .about {
+      position: relative;
+    }
+  
+    @media (min-width: 992px) {
+      .about .about-img {
+        width: 75%;
+        float: right;
+      }
+  
+      .about .about-text {
+        left: 0;
+        width: 60%;
+        margin-top: 3rem;
+        position: absolute;
+      }
+  
+      .about .about-text .about-button {
+        width: 100%;
+        left: 0;
+        position: absolute;
+        bottom: -2rem;
+      }
+    }
+  
+    @media (min-width: 1200px) {
+      .about .about-text {
+        width: 45%;
+      }
+    }
+  
+  
+    /*--------------------------------------------------------------
+  # Contact
+  --------------------------------------------------------------*/
+    .contact-box {
+      color: #000;
+      text-align: center;
+      box-shadow: 0 0 20px rgba(65, 76, 100, 0.05);
+      padding: 20px 0 30px 0;
+      background: rgb(127, 212, 252);
+    }
+  
+    .contact-box i {
+      font-size: 32px;
+      color: rgb(24, 0, 161);
+      border-radius: 50%;
+      padding: 8px;
+    }
+  
+    .contact-box h3 {
+      font-size: 20px;
+      color: #000;
+      font-weight: bold;
+      margin: 10px 0;
+    }
+  
+    .contact-box p {
+      padding: 0;
+      line-height: 24px;
+      font-size: 14px;
+      margin-bottom: 0;
+    }
+  
+    .contact button {
+      background: rgba(59, 37, 255, 0.8);
+      border: none;
+      padding: 10px;
+    }
+  
+    .contact button:hover {
+      background: rgba(59, 37, 255, 0.8);
+      color: #fff;
+    }
+  
+    /*--------------------------------------------------------------
+  # Footer
+  --------------------------------------------------------------*/
+    .footer {
+      text-align: center;
+      font-size: 0.9rem;
+      background: rgba(255, 48, 75, 0.8);
+    }
+  
+    .footer .btn-back {
+      background: #fff;
+      color: rgba(255, 48, 75, 0.8);
+    }
+  
+    .footer .text {
+      color: #000;
+    }
+    body {
+      background-color: ghostwhite;
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+      /* background: linear-gradient(#141e30, #243b55); */
+      /* background-color: black; */
+    }
+  
+    .col-centered {
+      float: none;
+      margin: 0 auto;
+    }
+  
+
+  
+    #sbbtn {
+      /* background-color:  rgb(0, 157, 230); */
+      background-color: rgba(255, 48, 75, 0.8);
+      /* border: 2px solid rgb(0, 157, 230); */
+      border-radius: 40px;
+      /* margin-bottom: ; */
+    }
+  
+    #sbbtn:hover {
+      border: 1px solid rgba(255, 48, 75, 0.8);
+      background-color: #ffffff;
+      background-color: white;
+      color: rgba(255, 48, 75, 0.8);
+    }
+  
+    .col-lg-4 {
+      color: rgb(0, 0, 0);
+      font-weight: bold;
+      /* border-radius: 40px; */
+    }
+  
+    input[type=file]::file-selector-button {
+      border: 6px solid #000000;
+      padding: .2em .4em;
+      border-radius: .2em;
+      background-color: #000000;
+      /* transition: 1s; */
+      color: white;
+  
+    }
+  
+    /* .choose_file_btn{
+    color: red;
+    background-color: rgb(127, 212, 252);
+    width: 20vw;
+    height: 40vh;
+    /* color: transparent; */
+  
+  
+  
+    body {
+      font-family: 'Roboto', sans-serif;
+    }
+  
+    /*--------------------------------------------------------------
+  # Navigation Menu
+  --------------------------------------------------------------*/
+    * {
+      scroll-behavior: smooth;
+    }
+  
+    .nav-back {
+      background: white;
+      color: rgba(255, 48, 75, 0.8);
+    }
+  
+    .navbar-brand {
+      color: rgb(255, 255, 255);
+    }
+  
+    .navbar-brand:hover {
+      color: #fff;
+    }
+  
+    .nav-link {
+      color: rgba(255, 48, 75, 0.8);
+    }
+  
+    .nav-link:hover {
+      color: rgba(255, 48, 75, 0.8);
+    }
+  
+    .navbar-toggler {
+      outline: none !important;
+    }
+  
+  
+  
+    /*--------------------------------------------------------------
+  # Hero Section
+  --------------------------------------------------------------*/
+    #hero {
+      width: 100%;
+      height: 100vh;
+      /* background: url("/templates/images/doc.jpg") center center; */
+      background-color: #000;
+      background-size: cover;
+      position: relative;
+      margin-top: 78px;
+    }
+  
+    #hero .container {
+      padding-top: 80px;
+    }
+  
+    #hero:before {
+      content: "";
+      background-image: url("https://images.unsplash.com/photo-1504813184591-01572f98c85f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTd8fGhvc3BpdGFsfGVufDB8fDB8fA%3D%3D&w=1000&q=80");
+      background-size: cover;
+      background-position: center;
+      opacity: 0.5;      background-size: cover;
+      background-position: center;
+      position: absolute;
+      bottom: 0;
+      top: 0;
+      left: 0;
+      right: 0;
+    }
+  
+  
+    #hero h1 {
+      margin: 0 0 10px 0;
+      font-size: 48px;
+      font-weight: 700;
+      line-height: 56px;
+      color: rgb(0, 0, 0);
+    }
+  
+    #hero h2 {
+      color: rgb(0, 0, 0);
+      margin-bottom: 40px;
+      font-size: 15px;
+      font-weight: 500;
+      font-family: "Open Sans", sans-serif;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+  
+    .main-btn {
+      font-family: "Poppins", sans-serif;
+      text-transform: uppercase;
+      font-weight: bold;
+      font-size: 14px;
+      letter-spacing: 1px;
+      display: inline-block;
+      padding: 8px 28px;
+      border-radius: 50px;
+      transition: 0.5s;
+      margin: 10px;
+      border: 2px solid white;
+      color: white;
+      
+    }
+  
+    .main-btn:hover {
+      background: rgba(255, 48, 75, 0.8);
+      border: 2px solid rgba(255, 48, 75, 0.8);
+      text-decoration: none;
+      color: #fff;
+    }
+  
+    /*--------------------------------------------------------------
+  # Services
+  --------------------------------------------------------------*/
+    .service {
+      text-align: center;
+      padding: 70px 20px 80px 20px;
+      transition: all ease-in-out 0.3s;
+      /* background: rgb(127, 212, 252); */
+      background-color: rgb(0, 221, 221);
+      font-weight: bold;
+      box-shadow: 0px 5px 90px 0px rgba(3, 117, 111, 0.63);
+    }
+  
+    .service .icon {
+      margin: 0 auto;
+      width: 64px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: ease-in-out 0.3s;
+      position: relative;
+      background: #f5f5f5;
+      border-radius: 50px;
+    }
+  
+    .service .icon i {
+      font-size: 32px;
+      transition: 0.5s;
+      line-height: 1;
+      position: relative;
+    }
+  
+    .service h4 {
+      font-weight: 600;
+      margin: 10px 0 15px 0;
+      font-size: 22px;
+      color: rgb(255, 255, 255);
+    }
+  
+    .service h4 a {
+      color: rgb(255, 255, 255);
+      transition: ease-in-out 0.3s;
+    }
+  
+    .service p {
+      line-height: 24px;
+      font-size: 16px;
+      margin-bottom: 0;
+    }
+  
+    .services i {
+      color: rgb(24, 0, 161);
+    }
+  
+    /*----about -section*/
+    .about-section {
+      margin-top: 5rem;
+      margin-bottom: 5rem;
+    }
+  
+    .about-heading {
+      text-transform: uppercase;
+    }
+  
+    .about-heading .about-heading-upper {
+      display: block;
+      font-size: 1rem;
+      font-weight: 800;
+    }
+  
+    .about-heading .about-heading-lower {
+      display: block;
+      font-size: 38px;
+      font-weight: 100;
+    }
+  
+    .bg-faded {
+      background-color: rgba(59, 37, 255, 0.8);
+    }
+  
+    .about-button .btn-color {
+      background: rgba(59, 37, 255, 0.8);
+      font-weight: bold;
+      color: #fff;
+    }
+  
+    .about {
+      position: relative;
+    }
+  
+    @media (min-width: 992px) {
+      .about .about-img {
+        width: 75%;
+        float: right;
+      }
+  
+      .about .about-text {
+        left: 0;
+        width: 60%;
+        margin-top: 3rem;
+        position: absolute;
+      }
+  
+      .about .about-text .about-button {
+        width: 100%;
+        left: 0;
+        position: absolute;
+        bottom: -2rem;
+      }
+    }
+  
+    @media (min-width: 1200px) {
+      .about .about-text {
+        width: 45%;
+      }
+    }
+  
+  
+    /*--------------------------------------------------------------
+  # Contact
+  --------------------------------------------------------------*/
+    .contact-box {
+      color: #000;
+      text-align: center;
+      box-shadow: 0 0 20px rgba(65, 76, 100, 0.05);
+      padding: 20px 0 30px 0;
+      background: rgb(127, 212, 252);
+    }
+  
+    .contact-box i {
+      font-size: 32px;
+      color: rgb(24, 0, 161);
+      border-radius: 50%;
+      padding: 8px;
+    }
+  
+    .contact-box h3 {
+      font-size: 20px;
+      color: #000;
+      font-weight: bold;
+      margin: 10px 0;
+    }
+  
+    .contact-box p {
+      padding: 0;
+      line-height: 24px;
+      font-size: 14px;
+      margin-bottom: 0;
+    }
+  
+    .contact button {
+      background: rgba(59, 37, 255, 0.8);
+      border: none;
+      padding: 10px;
+    }
+  
+    .contact button:hover {
+      background: rgba(59, 37, 255, 0.8);
+      color: #fff;
+    }
+  
+    /*--------------------------------------------------------------
+  # Footer
+  --------------------------------------------------------------*/
+    .footer {
+      text-align: center;
+      font-size: 0.9rem;
+      background: rgba(255, 48, 75, 0.8);
+    }
+  
+    .footer .btn-back {
+      background: #fff;
+      color: rgba(255, 48, 75, 0.8);
+    }
+  
+    .footer .text {
+      color: #000;
+    }
+    #topimg {
+        height: 55px;
+      }
+  
+      .nav-item {
+        font-size: 20px;
+        font-weight: 600;
+        font-family: inherit;
+        color: rgba(255, 48, 75, 0.8);
+      }
+  
+      .icon-box {
+        padding: 30px;
+        position: relative;
+        overflow: hidden;
+        background: #fff;
+        box-shadow: 0 0 29px 0 rgba(68, 88, 144, 0.12);
+        transition: all 0.3s ease-in-out;
+        border-radius: 8px;
+        z-index: 1;
+      }
+  
+      .icon-box::before {
+        content: "";
+        position: absolute;
+        background: rgba(255, 48, 75, 0.8);
+        right: -60px;
+        top: -40px;
+        width: 100px;
+        height: 100px;
+        border-radius: 50px;
+        transition: all 0.3s;
+        z-index: -1;
+      }
+  
+      .icon-box:hover::before {
+        background: rgba(255, 48, 75, 0.8);
+        right: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 0px;
+      }
+  
+      .icon {
+        margin: 0 auto 20px auto;
+        padding-top: 10px;
+        display: inline-block;
+        text-align: center;
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        background: rgba(255, 48, 75, 0.8);
+        transition: all 0.3s ease-in-out;
+      }
+  
+      .icon i {
+        font-size: 36px;
+        line-height: 1;
+        color: #fff;
+      }
+  
+      .services .icon-box:hover .title a,
+      .services .icon-box:hover .description {
+        color: #fff;
+      }
+  
+      .services .icon-box:hover .icon {
+        background: #fff;
+      }
+  
+      .services .icon-box:hover .icon i {
+        color: rgba(255, 48, 75, 0.8);
+      }
+  
+      .icon {
+        margin: 0 auto 20px auto;
+        padding-top: 10px;
+        display: inline-block;
+        text-align: center;
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        background: rgba(255, 48, 75, 0.8);
+        transition: all 0.3s ease-in-out;
+      }
+  
+      .services .icon i {
+        font-size: 36px;
+        line-height: 1;
+        color: #fff;
+      }
+  
+      .services .title a {
+        color: rgba(255, 48, 75, 0.8);
+      }
+  
+      .description {
+        font-size: 15px;
+        line-height: 28px;
+        margin-bottom: 0;
+      }
+  
+      #footer {
+        background: #212121;
+        padding: 0 0 30px 0;
+        color: #fff;
+        font-size: 14px;
+      }
+  
+      #footer .copyright {
+        text-align: center;
+        padding-top: 30px;
+      }
+  
+      #footer .credits {
+        padding-top: 10px;
+        text-align: center;
+        font-size: 13px;
+        color: #fff;
+      }
+      
+      
+  </style>
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Roboto:500,900,100,300,700,400' rel='stylesheet' type='index/css'>
+  <link href="/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <link rel="icon" style="background: transparent;" type="image/x-icon" href="../static/favicon.jpeg">  
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg nav-back fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand" href="/"> <img id="topimg" src="../static/WhatsApp Image 2023-03-03 at 12.27.28 PM.jpeg"
+          alt=""></a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+        data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+        aria-label="Toggle navigation"><i class="fas fa-bars fa-2x"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+         
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              Diagnosis
+            </a>
+            <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="/">All Disease</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="/home_brain_tumor">Brain Tumor Diagnosis</a>
+              <a class="dropdown-item" href="/home_heart">Heart Disease Diagnosis</a>
+              <a class="dropdown-item" href="/home_liver">Liver Disease Diagnosis</a>
+              <a class="dropdown-item" href="/home_kidney">Chronic Kidney Disease Diagnosis</a>
+              <a class="dropdown-item" href="/home_diabetes">Diabetes Diagnosis</a>
+              <a class="dropdown-item" href="/home_stroke">Stroke Risk Diagnosis</a>
+              <a class="dropdown-item" href="/home_pneumonia">Pneumonia Diagnosis</a>
+            </div>
+          </li>
+     
+
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <a name="home"></a>
+  <section id="hero" class="d-flex align-items-center">
+
+    <div class="container text-center position-relative">
+      {% block heading %} {% endblock %}
+      <a href="#info" class="main-btn">Get Started</a>
+    </div>
+  </section>
+  <a name="info"></a>
+  <br>
+  <br>
+  <br>
+  {% block info %}{% endblock %}
+
+  <a name="service"></a>
+  <br>
+  <br>
+  <br>
+  {% block form %}{% endblock %}
+  </div>
+  <br><br>
+
+  <footer id="footer" style="margin-top: 50px;">
+    <div class="container">
+      <div class="copyright">
+        &copy;<strong><span> HEAL</span></strong> FrostHack 
+      </div>
+      <div class="credits">
+        
+        Made by Team STING🦂
+      </div>
+    </div>
+  </footer>
+  </body>
+  
+  </html>
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+</body>
+
+
+
+</html>

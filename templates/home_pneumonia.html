@@ -1,0 +1,44 @@
+{% extends "base_home.html" %}
+
+{% block title %}
+Pneumonia Diagnosis
+{% endblock %}
+
+ {% block heading %}
+      <h1 style="color: white;">Welcome To <span style="color: rgba(255, 48, 75, 0.8);"> Pneumonia Diagnosis </span>  </h1>
+
+  {% endblock %}
+  {% block info %}
+  
+
+    {% endblock %}
+    {% block form %}
+    
+        <div class="text-center">
+        <p class="h1">Pneumonia Diagnosis</p>
+        </div>
+        <br>
+    <div class="container">
+        <div class="col-md-10 col-centered">
+        <div class="col-md-12">
+                <br>
+                <div style="text-align: center;">
+                    <h3 >Upload the Chest X-RAY</h3>
+                </div>
+                
+                <br>
+                <form action="pneumonia_pred" method="POST" enctype="multipart/form-data" class="text-center">
+
+                    <input required type="file" name="img" />
+                    <br><br><br>
+                    <!-- <input type="submit" name="btn" class="dl_submit"> -->
+                    <!-- <button type="submit" name="btn">submit</button> -->
+                    <center>
+                        <button type="submit" class="btn btn-info btn-lg btn-block" value="submit" name="btn"
+                            id="sbbtn" style="width: 50%;">Submit</button>
+                    </center>
+                </form>
+            </div>
+        </div>
+        </div>
+         {% endblock %}

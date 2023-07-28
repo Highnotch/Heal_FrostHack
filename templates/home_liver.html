@@ -1,0 +1,139 @@
+{% extends "base_home.html" %}
+
+{% block title %}
+Liver Disease Diagnosis
+{% endblock %}
+
+ {% block heading %}
+      <h1 style="color: white;">Welcome To <span style="color: rgba(255, 48, 75, 0.8);"> Liver Disease Diagnosis </span> </i> </h1>
+    
+  {% endblock %}
+  {% block info %}
+
+    {% endblock %}
+    {% block form %}
+        
+    
+        <div class="text-center">
+        <p class="h1">Liver Disease Diagnosis</p>
+        </div>
+        <br>
+    <div class="container">
+        <div class="col-md-10 col-centered">
+        <div class="col-md-12">
+                <form action="{{ url_for('liver_pred') }}" method="post">
+                    <br>
+                    <br>
+                    <div class="form-group">
+                        
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4">
+                                <label for="age">Age</label>
+                            </div>
+                            <div class="col-lg-8 col-md-8">
+                                <input required  type="text" class="form-control" id="age" name="age" placeholder="Age">
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4">
+                                <label for="gender">Gender</label>
+                            </div>
+                            <div class="col-lg-8 col-md-8">
+                                <input required  type="text" class="form-control" id="gender" name="gender" placeholder="1 for Male, 0 for Female">
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4">
+                                <label for="Total_Bilirubin">Total Bilirubin</label>
+                            </div>
+                            <div class="col-lg-8 col-md-8">
+                                <input required  type="text" class="form-control" id="Total_Bilirubin" name="Total_Bilirubin" placeholder="Total Bilirubin">
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4">
+                                <label for="Direct_Bilirubin">Direct Bilirubin</label>
+                            </div>
+                            <div class="col-lg-8 col-md-8">
+                                <input required  type="text" class="form-control" id="Direct_Bilirubin" name="Direct_Bilirubin" placeholder="Direct Bilirubin">
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4">
+                                <label for="Alkaline_Phosphotase">Alkaline Phosphatase</label>
+                            </div>
+                            <div class="col-lg-8 col-md-8">
+                                <input required  type="text" class="form-control" id="Alkaline_Phosphotase" name="Alkaline_Phosphotase" placeholder="Alkaline Phosphatase">
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4">
+                                <label for="Alamine_Aminotransferase">Alamine Aminotransferase</label>
+                            </div>
+                            <div class="col-lg-8 col-md-8">
+                                <input required  type="text" class="form-control" id="Alamine_Aminotransferase" name="Alamine_Aminotransferase" placeholder="Alamine Aminotransferase">
+                                    
+                                </select>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4">
+                                <label for="Aspartate_Aminotransferase">Aspartate Aminotransferase</label>
+                            </div>
+                            <div class="col-lg-8 col-md-8">
+                                <input required  type="text" class="form-control" id="Aspartate_Aminotransferase" name="Aspartate_Aminotransferase" placeholder="Aspartate Aminotransferase">
+                                    
+                                </select>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4">
+                                <label for="Total_Protiens">Total Protiens</label>
+                            </div>
+                            <div class="col-lg-8 col-md-8">
+                                <input required  type="text" class="form-control" id="Total_Protiens" name="Total_Protiens" placeholder="Total Protiens">
+                                    
+                                </select>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4">
+                                <label for="Albumin">Albumin</label>
+                            </div>
+                            <div class="col-lg-8 col-md-8">
+                                <input required  type="text" class="form-control" id="Albumin" name="Albumin" placeholder="Albumin">
+                                    
+                                </select>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4">
+                                <label for="Albumin_and_Globulin_Ratio">Albumin and Globulin Ratio</label>
+                            </div>
+                            <div class="col-lg-8 col-md-8">
+                                <input required  type="text" class="form-control" id="Albumin_and_Globulin_Ratio" name="Albumin_and_Globulin_Ratio" placeholder="Albumin and Globulin Ratio">
+                                    
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <br>
+                        
+                        <center>
+                            <button type="submit" class="btn btn-light btn-lg btn-block" id="sbbtn" value="submit">Submit</button>
+                        </center>
+                        <br>
+                </form>
+            </div>
+            </div>
+        </div>
+       {% endblock %}

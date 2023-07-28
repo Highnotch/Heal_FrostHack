@@ -1,0 +1,18 @@
+{% extends "base_result.html" %}
+
+{% block title %}
+ {{title}} Diagnosis
+{% endblock %}
+
+ {% block heading %}
+        <h1 style="font-size: 100px; color: rgba(255, 48, 75, 0.8);"> <i class="fas fa-frown"></i> </h1>
+      <h1>Diagnosed with <span style="color: rgba(255, 48, 75, 0.8);"> {{title}}   </span> </h1>
+      <p class="alert alert-danger">The algorithm has diagnosed the patient with <a href="#" class="alert-link">{{title}}</a> based on the inputs.</p>
+       {% block button %}
+       <a href="javascript:history.back()" class="main-btn" id="backtogreen" >Back To Diagnosis</a>
+               {% endblock %} 
+      
+
+  {% endblock %}
+  
+    

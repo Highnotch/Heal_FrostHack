@@ -1,0 +1,244 @@
+{% extends "base_home.html" %}
+
+{% block title %}
+Stroke Risk Diagnosis
+{% endblock %}
+
+ {% block heading %}
+      <h1 style="color: white;">Welcome To <span style="color: rgba(255, 48, 75, 0.8);"> Stroke Risk Diagnosis </span>  </h1>
+ 
+  {% endblock %}
+  {% block info %}
+
+    {% endblock %}
+    {% block form %}
+    <html>
+
+	<title>BMI Calculator</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	<link rel="stylesheet" type="text/css" href="stylesheet.css">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <script>
+        var weight, height, measure, bmi, error ;
+
+function calculate() {
+	weight = document.getElementById("weight").value;
+	height = document.getElementById("height").value;
+	error = "Please enter some values";
+	height /= 100;
+	height *= height;
+	bmi = weight/height;
+	bmi = bmi.toFixed(1);
+
+	measure="Your BMI is " + bmi;
+	
+
+	if (weight === 0 ) {
+		document.getElementById("results").innerHTML = error;
+	} else if (height === 0){
+		document.getElementById("results").innerHTML = error;
+	}
+	 else {
+
+		document.getElementById("results").innerHTML = measure;
+	}
+	if (weight < 0) {
+		document.getElementById("results").innerHTML = "Negative Values not Allowed";
+	}
+}
+
+    </script>
+    <style>
+        @media (min-width: 768px) {
+    .panel {
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (min-width: 1024px) {
+    .panel {
+        width: 30%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+    </style>
+
+<body style=" background-color: #eee;
+text-align: center;" >
+    <div class="container">
+    	<div class="panel" style=" margin-top: 20px;
+        float: none;">
+    		<h2 style="margin-bottom: 10px;" class="text-center">BMI Calculator</h2>
+    		
+    			
+    			<form style="  background-color: #fff;
+                padding: 20px;
+                color: #000;
+                border-radius: 25px;
+                ">
+    				<div id="weightInput">
+    					<p style="  margin-bottom: 5px; color: rgb(0, 0, 0);
+                        font-weight: bold;">Weight (KG)</p>
+    		     		<input style="width: 100%;
+                         padding: 5px 14px;
+                        
+                         margin-bottom: 10px;
+                       
+                         outline: none;
+                      
+                         font-size: 14px;     border: 1px solid #ced4da;" id="weight" type="number" pattern="[0-9]*" name="a" />
+    				</div>
+                    <br>
+    				<div id="heightInput">
+    					<p style="  margin-bottom: 5px; color: rgb(0, 0, 0);
+                        font-weight: bold;">Height (CM)</p>
+	    				 <input style="width: 100%;
+                         padding: 5px 14px;
+                      
+                         margin-bottom: 10px;
+                         
+                         outline: none;
+                      
+                         font-size: 14px; border: 1px solid #ced4da;" id="height" type="number" pattern="[0-9]*" name="b"/> 
+    				</div>
+                    <br>
+    		     <button style="background-color: rgba(255, 48, 75, 0.8) ; border: 0; border-radius: 25px; font-size: 15px; padding: 10px 100px;
+                 outline: none;margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block; font-weight: 400;" type="button"  onclick="calculate()">Calculate BMI</button>
+    		</form>
+            <br>
+    		<div id="results" class="text-center" style="font-weight: 600;" ></div>
+    	</div>
+    </div>
+	<script src="main.js"></script>
+</body>
+
+<br>
+<br>
+</html>
+
+        <div class="text-center">
+        <p class="h1">Stroke Risk Diagnosis</p>
+        </div>
+        <br>
+    <div class="container">
+        <div class="col-md-10 col-centered">
+        <div class="col-md-12">
+                <form action="{{ url_for('stroke_pred') }}" method="post">
+                    <br>
+                    <br>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4">
+                                <label for="gender">Gender</label>
+                            </div>
+                            <div class="col-lg-8 col-md-8">
+                                <input required  type="text" class="form-control" id="gender" name="gender" placeholder="1 for Male, 0 for Female">
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4">
+                                <label for="age">Age</label>
+                            </div>
+                            <div class="col-lg-8 col-md-8">
+                                <input required  type="text" class="form-control" id="age" name="age" placeholder="Age">
+                                    
+                                </select>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4">
+                                <label for="hypertension">Hypertension  </label>
+                            </div>
+                            <div class="col-lg-8 col-md-8">
+                                <input required  type="text" class="form-control" id="hypertension" name="hypertension" placeholder="1 for Yes, 0 for No">
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4">
+                                <label for="heart_disease">Heart Disease </label>
+                            </div>
+                            <div class="col-lg-8 col-md-8">
+                                <input required  type="text" class="form-control" id="heart_disease" name="heart_disease" placeholder="1 for Yes, 0 for No">
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4">
+                                <label for="ever_married">Marital Status</label>
+                            </div>
+                            <div class="col-lg-8 col-md-8">
+                                <input required  type="text" class="form-control" id="ever_married" name="ever_married" placeholder="1 for Yes, 0 for No">
+                                    
+                                </select>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4">
+                                <label for="work_type">Work Type </label>
+                            </div>
+                            <div class="col-lg-8 col-md-8">
+                                <input required  type="text" class="form-control" id="work_type" name="work_type" placeholder="0 for Govt. Job, 1 for Never Worked, 2 for Private, 3 for Self-employed, 4 for Student">
+                                    
+                                </select>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4">
+                                <label for="Residence_type">Residence Type</label>
+                            </div>
+                            <div class="col-lg-8 col-md-8">
+                                <input required  type="text" class="form-control" id="Residence_type" name="Residence_type" placeholder="1 for Urban,0 for Rural">
+                            </div>
+                        </div>
+                        <br>
+			
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4">
+                                <label for="avg_glucose_level">Average Glucose Level</label>
+                            </div>
+                            <div class="col-lg-8 col-md-8">
+                                <input required  type="text" class="form-control" id="avg_glucose_level" name="avg_glucose_level" placeholder="Average Glucose Level">
+                            </div>
+                        </div>
+                        <br>
+			
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4">
+                                <label for="bmi">BMI</label>
+                            </div>
+                            <div class="col-lg-8 col-md-8">
+                                <input required  type="text" class="form-control" id="bmi" name="bmi" placeholder="BMI">
+                            </div>
+                        </div>
+                        <br>
+			
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4">
+                                <label for="smoking_status">Smoking Status</label>
+                            </div>
+                            <div class="col-lg-8 col-md-8">
+                                <input required  type="text" class="form-control" id="smoking_status" name="smoking_status" placeholder="0 for Unknown, 1 for formerly smoked, 2 for never smoked, 3 for smokes ragularly">
+                            </div>
+                        </div>
+                        
+                        <br>
+                        <center>
+                            <button type="submit" class="btn btn-light btn-lg btn-block" id="sbbtn" value="submit">Submit</button>
+                        </center>
+                        <br>
+                </form>
+            </div>
+        </div>
+        </div>
+        {% endblock %}

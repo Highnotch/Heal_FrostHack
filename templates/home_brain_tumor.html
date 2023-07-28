@@ -1,0 +1,47 @@
+{% extends "base_home.html" %}
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
+</script>
+{% block title %}
+Brain Tumor Diagnosis
+{% endblock %}
+
+{% block heading %}
+<h1 style="color: white;">Welcome To <span style="color: rgba(255, 48, 75, 0.8);"> Brain Tumor Diagnosis</span></h1>
+
+{% endblock %}
+{% block info %}
+
+{% endblock %}
+{% block form %}
+<style>
+    .btn{
+        width: 20%;
+    }
+    @media (max-width: 1200px){
+            .btn{
+                width: 50%;
+            }
+    }
+</style>
+<div class="text-center">
+    <p class="h1">Brain Tumor Diagnosis</p>
+</div>
+<br>
+
+<div class="form-group text-center">
+    <form action="brain_tumor_pred" method="POST" enctype="multipart/form-data" class="text-center">
+        <h3>Upload the MRI scan</h3>
+        <br>
+        <input  required type="file" name="img" />
+        <br><br><br>
+        <!-- <input type="submit" name="btn" class="dl_submit"> -->
+        <!-- <button type="submit" name="btn">submit</button> -->
+        <center>
+            <button type="submit" class="btn btn-info btn-lg btn-block" value="submit" name="btn"
+                id="sbbtn" >Submit</button>
+        </center>
+    </form>
+
+</div>
+
+{% endblock %}
